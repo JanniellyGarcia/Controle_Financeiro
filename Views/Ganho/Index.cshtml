@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Controle_Financeiro.Models.Ganho>
+
+@{
+    ViewData["Title"] = "Cadastre seus ganhos";
+}
+
+<h1>Ganhos</h1>
+
+<p>
+    <a asp-action="Create">Criar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.categoriaGanho.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(model => item.Id)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => item.Nome)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => item.Valor)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => item.categoriaGanho.Name)
+                </th>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

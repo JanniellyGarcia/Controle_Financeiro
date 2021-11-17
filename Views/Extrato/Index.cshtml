@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Controle_Financeiro.Models.Extrato>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Extrato</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => @Extrato.extratoganho)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => @Extrato.extratogasto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => @Extrato.saldo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>
+                R$ @Html.DisplayFor(model => @Extrato.extratoganho)
+            </th>
+            <th>
+                R$ @Html.DisplayFor(model => @Extrato.extratogasto)
+            </th>
+            <th>
+                R$ @Html.DisplayFor(model => @Extrato.saldo)
+            </th>
+        </tr>
+
+    </tbody>
+</table>
